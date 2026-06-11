@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
 </head>
 <body>
-
 <style>
         /* พื้นหลังธีมชมพูฟ้าพาสเทล */
         body {
@@ -115,34 +112,41 @@
     </style>
     </head>
 <body>
-    
+<body>
+
     <?php
-        echo "<h1 style='color:blue';>งานที่ 1 พัชราภรณ์ พรหมภักษร BIT.2/4 เลขที่ 15</h1>";
+        // แสดงชื่อผู้จัดทำ (เปลี่ยนสี inline จากน้ำเงินเป็นชมพูเข้มให้เข้ากับธีม)
+        echo "<h1 style='color:#ff758f;'>งานที่ 1 พัชราภรณ์ พรหมภักษร BIT.2/4 เลขที่ 15</h1>";
     ?>
 
-    <a href="while.php">whili loop/a>
+    <a href="index.php"> for loop </a>
 
-<
-    <form action="">
-        <label for="">เลขแม่สูตรคูณ</label> <br>
-        <input type="number" name="num" id="">
-        <input type="submit" value="คำนวณ">
-    </form>
-    <?php
-         
-         if(isset($_GET["num"])){
+    <div class="container">
+        <form action="" method="GET">
+            <label for="num">เลขแม่สูตรคูณ</label> <br>
+            <input type="number" name="num" id="num">
+            <br>
+            <input type="submit" value="คำนวณ">
+        </form>
+
+        <?php
+        if(isset($_GET["num"])){
             $num = $_GET["num"];
-
-            echo  "สูตรคูณแม่" . $num . "<br>";
-
-            //. เริ่มต้น       สิ้นสุด. เพิ่มทีละ1
+            
+            // ใส่ class เพื่อดึงสไตล์กล่องผลลัพธ์มาใช้
+            echo "<div class='result-box'>";
+            echo "<div class='result-title'>สูตรคูณแม่ " . $num . "</div>";
+            
             for($i = 1; $i <= 12; $i++) {
-                $result = $num * $i ;
-                echo $num . " x " . $i . " = " . $num * $i . "<br>";
+                $result = $num * $i;
+                echo $num . " x " . $i . " = " . $result . "<br>";
             }
+            echo "</div>";
+        }
+        ?>
+    </div>
+    
 
-         }
-    ?>
 
 </body>
 </html>
