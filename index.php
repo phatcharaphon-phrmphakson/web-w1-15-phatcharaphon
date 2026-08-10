@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-</head>
-<body>
-
 <style>
         /* พื้นหลังธีมชมพูฟ้าพาสเทล */
         body {
@@ -117,32 +114,35 @@
 <body>
     
     <?php
-        echo "<h1 style='color:blue';>งานที่ 1 พัชราภรณ์ พรหมภักษร BIT.2/4 เลขที่ 15</h1>";
+        echo "<h1 style='color:#ff758f;'>งานที่ 1 พัชราภรณ์ พรหมภักษร BIT.2/4 เลขที่ 15</h1>";
     ?>
 
-    <a href="while.php">whili loop/a>
+    <a href="while.php"> while loop </a>
 
-<
-    <form action="">
-        <label for="">เลขแม่สูตรคูณ</label> <br>
-        <input type="number" name="num" id="">
-        <input type="submit" value="คำนวณ">
-    </form>
-    <?php
-         
-         if(isset($_GET["num"])){
+    <div class="container">
+        <form action="" method="GET">
+            <label for="num">เลขแม่สูตรคูณ</label> <br>
+            <input type="number" name="num" id="num">
+            <br>
+            <input type="submit" value="คำนวณ">
+        </form>
+        <?php
+
+        if(isset($_GET["num"])){
             $num = $_GET["num"];
 
-            echo  "สูตรคูณแม่" . $num . "<br>";
+            echo "<div class='result-box'>";
+            echo "<div class='result-title'>สูตรคูณแม่ " . $num . "</div>";
 
             //. เริ่มต้น       สิ้นสุด. เพิ่มทีละ1
             for($i = 1; $i <= 12; $i++) {
-                $result = $num * $i ;
-                echo $num . " x " . $i . " = " . $num * $i . "<br>";
+                $result = $num * $i;
+                echo $num . " x " . $i . " = " . $result . "<br>";
             }
-
-         }
-    ?>
+            echo "</div>";
+        }
+        ?>
+    </div>
 
 </body>
 </html>
